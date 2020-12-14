@@ -33,6 +33,7 @@ def menu(name):
     else:
         exit_out(name)
         # masuk ke fungsi exit_out
+       #saran aja lebih baik dikasih fungsi untuk kembali ke menu semula atau keluar dsri programnya
 
 def hipotenusa(): 
     # fungsi ini berguna untuk menghitung besar sisi miring sebuah segitiga
@@ -42,7 +43,7 @@ def hipotenusa():
      tinggi_segitiga = int(input('Masukan nilai tinggi dari segitiga: ')) # meminta nilai tinggi dari segitiga
      print()
      print(f'Sisi miring atau hipotenusa = {round(math.sqrt( alas_segitiga ** 2 + tinggi_segitiga ** 2))}') #di baris ini, gw tambahin round, buat iseng aja sbnrnya klo emg hasilnya koma wkwk
-     menu(name)
+     choice()
 
 def tinggi():
     # fungsi ini berguna untuk menghitung besar sisi tinggi sebuah segitiga
@@ -52,7 +53,7 @@ def tinggi():
     alas_segitiga = int(input('Masukan nilai alas dari segitiga: ')) # meminta nilai alas dari segitiga
     print()
     print(f'tinggi = {math.sqrt( hipotenusa_segitiga ** 2 - alas_segitiga ** 2)}') 
-    menu(name)
+    choice()
 
 def alas():
     # fungsi ini berguna untuk menghitung besar sisi alas sebuah segitiga
@@ -62,7 +63,7 @@ def alas():
     tinggi_segitiga = int(input('Masukan nilai tinggi dari segitiga: ')) # meminta nilai tinggi dari segitiga
     print()
     print(f'alas = {math.sqrt( hipotenusa_segitiga ** 2 - tinggi_segitiga ** 2)}')
-    menu(name)
+    choice()
 
 def luas():
     # fungsi ini berguna untuk menghitung luas sebuah segitiga
@@ -72,7 +73,7 @@ def luas():
     tinggi_segitiga = int(input('Masukan nilai tinggi dari segitiga: ')) # meminta nilai tinggi dari segitiga
     print()
     print(f'luas Segitiga = {alas_segitiga * tinggi_segitiga / 2}')
-    menu(name)
+    choice()
 
 def tipe_segitiga():
     # fungsi ini berguna untuk menentukan jenis segitiga dari sisi-sisinya
@@ -83,20 +84,21 @@ def tipe_segitiga():
     print()
     tinggi_segitiga = int(input('Masukan nilai tinggi \n ')) # meminta nilai tinggi dari segitiga
 
+
     if hipotenusa_segitiga ** 2 == alas_segitiga ** 2 + tinggi_segitiga ** 2:
       print()
       print(f'Segitiga ini adalah segitiga siku-siku ')
-      menu(name)
+      choice()
 
     elif hipotenusa_segitiga ** 2 < alas_segitiga ** 2 + tinggi_segitiga ** 2:
        print()
        print(f'Segitiga ini adalah segitiga lancip ')
-       menu(name)
+       choice()
 
     else:
        print()
        print(f'Segitiga ini adalah segitiga tumpul ')
-       menu(name)
+       choice()
 
 def tripel():
     # fungsi ini berguna untuk menentukan apakah suatu segitiga itu tripel pythagoras atau tidak dari sisi-sisinya
@@ -108,16 +110,22 @@ def tripel():
     if hipotenusa_segitiga ** 2 == alas_segitiga ** 2 + tinggi_segitiga ** 2:
         print()
         print(f'Segitiga ini termasuk tripel pythagoras ')
-        menu(name)
+        choice()
 
     else:
         print()
         print(f'Segitiga ini tidak termasuk tripel pythagoras ')
-        menu(name)
-
-def exit_out(name):
-    # fungsi keluar dari program
-    print(f'\n Terima Kasih {name} \n')
+        choice()
+    
+def choice():
+    print("Kembali ke kalkulator?")
+    choose = input("pilih ya/tidak?: ")
+    if choose == "ya"
+       menu(name)
+    elif choose == "tidak"
+         print("terima kasih telah menggunakan kalkulator pytahgoras")
+         exit
+          
 
 name = input('Masukan nama kamu: ')
 welcome(name)
